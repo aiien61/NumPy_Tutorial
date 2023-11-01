@@ -36,6 +36,30 @@ def reshape():
     b = np.reshape(a, (3, 4)) # reshaped to be 2D array
     pprint(b)
 
+    b[0, 1] = 100
+    pprint(b)
+    pprint(a)
+
+    # np.resize(x, newshape)
+    a = np.arange(12)
+    pprint(a)
+
+    b = np.resize(a, (3, 4))
+    pprint(b)
+
+    b[0, 1] = 100
+    pprint(b)
+    pprint(a)
+
+
+def auto_reshape():
+    a = np.arange(12)
+    pprint(np.reshape(a, (3, -1)))  # auto reshape the second axis to 4
+    pprint(np.reshape(a, (-1, 6)))  # auto reshape the first axis to 2
+
+    b = np.arange(12).reshape(3, -1)  # auto reshape the second axis to 4
+    pprint(b)
+
 
 if __name__ == "__main__":
     reshape()
